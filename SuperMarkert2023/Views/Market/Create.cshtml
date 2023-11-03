@@ -1,0 +1,40 @@
+﻿@model Aplication.ViewModel.CreateProductViewModel
+@{
+    ViewData["Title"] = "Create products";
+}
+<div class="row mb-3">
+    <h2 class="text-center ">Register new product</h2>
+</div>
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="card">
+            <div class="card-header bg-primary text-light">
+                new product
+            </div>
+            <div class="card-body">
+                
+                <form method ="post">
+                <div class="mb-3">
+                        <label asp-for="Name" class="form-label">
+                            Name:</label>
+                    <input asp-for="Name" type="text" class="form-control" />
+                </div>
+                    <div class ="mb-3">
+                        <label asp-for="Price" class="form-label">Price:</label>
+                        <input asp-for="Price" step="any" type="number" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="productType" class="form-label">Price:</label>
+                        <select asp-for="productType" class="form-select">
+                            <option value="1">Fruits</option>
+                            <option value="2">Vegetables</option>
+                            <option value="3">Dairy Products</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary float-end">Save</button>
+            </form>   
+            
+            </div>
+        </div>
+    </div>
+</div>

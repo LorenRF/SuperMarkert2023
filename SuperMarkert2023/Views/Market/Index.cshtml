@@ -1,0 +1,114 @@
+﻿@*Strong type views*@ 
+@model Aplication.ViewModel.ProductListViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="row mb-3">
+    <h2 class="text-center"> Product list</h2>
+</div>
+<div class="row">
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-success text-light">
+                Vegetables
+            </div>
+            <div class="card-body">
+                @if(Model.Vegetables.Count == 0)
+                {
+                    <h2>Not Fount Vegetables</h2>
+                }
+                else{
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model.Vegetables)
+                        {
+                          <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                        </tr> 
+                        }
+                        
+                       
+                    </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-danger text-light">
+                Fuits
+            </div>
+            <div class="card-body">
+                 @if(Model.Fruits.Count == 0)
+                {
+                    <h2>Not Fount Fruits</h2>
+                }
+                else{
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Fruits)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-warning text-light">
+                Darly Products
+            </div>
+            <div class="card-body">
+                 @if(Model.DairyProducts.Count == 0)
+                {
+                    <h2>Not Fount Dairy Products</h2>
+                }
+                else{
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.DairyProducts)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>
